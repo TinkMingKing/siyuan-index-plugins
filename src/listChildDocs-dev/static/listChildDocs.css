@@ -1,0 +1,414 @@
+.app button {
+    border: 0px;
+    /* font-weight: 300; */
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    /* color: white; */
+    padding: 0px;
+    /* text-align: center;
+    text-decoration: none; */
+    display: inline-block;
+    /* font-size: 16px; */
+    /* min-width: 15px; */
+    background-color: #f0f0f022;
+    cursor: pointer;
+}
+
+/* max-device-width 已过时，但替换为max-width可能导致电脑也变化*/
+@media screen and (max-device-width: 768px) { 
+    .app button {
+        margin-right: 1.7em;
+    }
+}
+
+.app select,
+.app input,
+.ui-dialog input {
+    border: 1px solid sandybrown;
+    font-weight: 300;
+    background-size: auto 1.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3em;
+    height: 1.5em;
+    border-radius: 0.3em;
+    box-sizing: border-box;
+    /* color: white; */
+    /* padding: 15px 32px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    min-width: 15px;
+    background-color: #f0f0f022;
+    /* background-color:darkslategray;
+    color: white; */
+}
+
+/* 聚焦选中 */
+.app select:focus-visible,
+.app input:focus-visible,
+.ui-dialog input:focus-visible {
+    outline: 0px;
+    border-width: 2px;
+}
+
+.app input[type="number"], .app input[type="text"]{
+    cursor: text;
+}
+
+.ui-dialog input {
+    width: 100%;
+    cursor: text;
+    text-align: left;
+}
+
+.app select:disabled,
+.app input:disabled {
+    border: 1px solid rgba(118, 118, 118, 0.3);
+    color: rgba(84, 84, 84, 0.3);
+    /* background-color:darkslategray
+    color: white; */
+}
+
+.app input[type="checkbox"] {
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em;
+    cursor: pointer;
+    /* box-sizing: border-box; */
+    /* text-align: center;
+    display: inline-block; */
+}
+
+.upperbar>* {
+    margin-left: 0.5em;
+}
+
+#printMode {
+    width: 5em;
+}
+
+#innerSetting > * {
+    display: none;
+}
+
+#innerSetting select:disabled, #innerSetting input:disabled {
+    cursor: not-allowed;
+}
+
+/* #savedepth {
+    width: 3em;
+    height: 1.5em;
+    border: 1px solid sandybrown;
+    margin-left: 0.2em;
+    display: inline-block;
+    border-radius: 0.3em;
+    color: #4CB0F9;
+}
+
+#listcolumn {
+    border-style: dashed;
+    border-color: purple;
+} */
+
+/* #listcolumn:focus{
+    border: 2px dashed purple
+} */
+/* select:hover,
+button:hover,
+input:hover {
+    border-width: 2px;
+} */
+
+#updateTime {
+    margin-left: 0.5em;
+    /* color: darkgray; */
+}
+
+/* 深夜模式下普通文本颜色 */
+.ordinaryText_dark, [data-darkmode] .upperbardiv span, [data-darkmode] #linksContainer, [data-darkmode] .mode12_date_text{
+    color: #C9D1D9;
+}
+
+.upperbar {
+    float: left;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.upperbardiv {
+    display: block;
+}
+
+/* 按钮夜间样式 */
+.button_dark, [data-darkmode] .upperbardiv input, [data-darkmode] .upperbardiv select, .dark_dialog input  {
+    background-color: darkslategray;
+    color: white;
+}
+
+.linksList {
+    margin-top: 0px;
+}
+
+.noListStyle {
+    list-style-type: none;
+    padding-inline-start: 0%;
+}
+
+/* 无序列表单项 */
+.linksListItem {
+    padding: 4px 0px;
+}
+
+/* 列表单项（深色）*/
+[data-darkmode] .linksListItem {
+    padding: 4px 0px;
+    color: #C9D1D9;
+}
+
+/* 挂件内自定义emoji样式 */
+.iconpic {
+    width: 18px;
+    height: 18px;
+    vertical-align: bottom;
+}
+
+/* 子文档区域 */
+#refContainer {
+    cursor: default;
+}
+
+/* 链接文字样式 */
+.childDocLinks,
+.refLinks {
+    /* color: black; */
+    padding: 0 2px;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(0, 0, 0, .1);
+}
+
+/* 暗黑模式下，链接文字样式 */
+[data-darkmode] .linksList {
+    color: #C9D1D9;
+}
+
+/* 链接文字悬停样式 */
+.linkTextHoverHightLight:hover{
+    color: #1186d9;
+    border-bottom: 1px dashed #4CB0F9;
+}
+
+/* 扩大点击范围为整行时，悬停样式 */
+.itemHoverHighLight:hover {
+    background-color: #1186d91f;
+    color: #1186d9;
+}
+
+/* 错误提示文字样式 */
+.errorinfo {
+    color: red;
+    text-align: center;
+}
+
+/* 链接区，所有挂件内模式共用 */
+#linksContainer {
+    column-fill: balance;
+    clear: both;
+}
+
+/* 属于此类的元素，将被点击处理 */
+.handle-ref-click {
+    cursor: pointer;
+}
+
+/********************************************** 预览方格模式内css */
+/* 子文档方块区 */
+.mode11-note-box {
+    max-height: 250px;
+    overflow: auto;
+    border-radius: 10px;
+    padding: 10px 15px 15px 8px;
+    margin: 5px 5px 5px 0;
+    flex-direction: column;
+    flex: 1 0 250px;
+    display: flex;
+    background-color: #ebebeb86;
+}
+/* 子文档方块外围div */
+.mode11-box {
+    overflow: auto;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+/* 子文档方块内的文档标题 */
+.mode11-title {
+    margin: 10px 0 10px 0;
+}
+
+/* 二级文档标题所在的段落 */
+.mode11-child-p-container > p {
+    margin: 0 0 0 7px;
+    width: 95%;
+    white-space: normal;
+    font-size: 0.9;
+}
+/* 预览内链接内容 */
+[data-darkmode] .mode11-doc-content a {
+    color: #7aa7d4 !important;
+}
+
+/* 子文档内容节选 */
+.mode11-doc-content {
+    margin: 0 0 0 7px;
+    width: 95%;
+    white-space: normal;
+    overflow: hidden;
+}
+
+/* .mode11-doc-content p {
+    display: inline; 
+} */
+
+/* mode11 图片显示*/
+.mode11-doc-content .img img {
+    max-width: 100%;
+    display: inline-block;
+}
+
+/* 子文档预览内容 */
+.mode11-doc-content [id][updated] {
+    font-size: 16px;
+    margin: 5px 0 0 0;
+}
+
+.mode11-note-box:hover {
+    background-color: #bfbfbf86;
+}
+
+/* 任务列表样式调整 */
+.mode11-doc-content ul:has(> .protyle-task) {
+    list-style-type: none;
+    padding-left: 16px;
+}
+
+.mode11-doc-content > ul:has(> .protyle-task) {
+    padding-left: 0px;
+}
+
+.mode11-doc-content .protyle-task input ~ p {
+    display: inline-block;
+}
+
+/* mode11 深色模式方块*/
+[data-darkmode] .mode11-note-box {
+    background-color: #efefef15;
+    color: #C9D1D9;
+}
+/* mode11 深色模式方块悬停*/
+[data-darkmode] .mode11-note-box:hover {
+    background-color: #efefef25;
+}
+
+
+/********************************************* 挂件思维导图样式 */
+/* 思维导图<a>链接样式 */
+.markmap_a {
+    color: black !important;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(0, 0, 0, .1);
+    /* white-space: nowrap; */
+}
+/* 思维导图<a>链接鼠标悬停时样式 */
+.markmap_a:hover {
+    color: #1186d9 !important;
+    border-bottom: 1px dashed #4CB0F9 !important;
+    /* white-space: nowrap; */
+}
+
+/* 思维导图普通文字深色样式 */
+[data-darkmode] .markmap {
+    color: #C9D1D9 !important;
+}
+/* 思维导图链接深色样式 */
+[data-darkmode] .markmap_a {
+    color: #C9D1D9 !important;
+    text-decoration: none !important;
+    /* white-space: nowrap; */
+}
+
+/* 思维导图悬停样式*/
+[data-darkmode] .markmap_a:hover{
+    color: #1186d9 !important;
+    border-bottom: 1px dashed #4CB0F9 !important;
+}
+
+/***************** 模式12 */
+.mode12_date_text {
+    font-weight: bold;
+}
+
+
+.emojitext {
+    font-family: 'Segoe UI Emoji', 'Segoe UI Symbol', 'Segoe UI', 'Apple Color Emoji',
+    'Twemoji Mozilla', 'Noto Color Emoji', 'Android Emoji';
+}
+/*****************************对话框*/
+.ui-dialog.dark_dialog {
+    background-color: #101010;
+    color: #C9D1D9;
+    box-shadow: none !important;
+}
+
+.ui-dialog.dark_dialog button {
+    color: #C9D1D9;
+    background-color: inherit;
+}
+
+.ui-dialog.dark_dialog button:hover {
+    color: #C9D1D9;
+    background-color: #00000055;
+}
+
+.ui-dialog button[i-id="Delete"], .ui-dialog button[i-id="删除"], .ui-dialog.delete_dialog button[i-id=ok] {
+    background-color: #dd041e99;
+    color: whitesmoke;
+}
+
+.ui-dialog button[i-id="Delete"]:hover, .ui-dialog button[i-id="删除"]:hover, .ui-dialog.delete_dialog button[i-id=ok]:hover {
+    background-color: #dd041ecc;
+    color: whitesmoke;
+}
+
+/* 内容占据全部宽度 */
+.ui-dialog-content[i="content"] {
+    width: 100%;
+}
+
+/* 检索高亮结果 */
+.search_highlight {
+    background-color: #efc52f5e;
+}
+
+[data-darkmode] .search_highlight {
+    background-color: #85d0a35e;
+}
+
+body {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.app {
+    width: 100%;
+}
