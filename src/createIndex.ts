@@ -7,6 +7,8 @@ export async function main(){
     data = await createIndex(box, path, data);
     if(data != '')
         insertData(parentId, data);
+    else
+        await serverApi.pushErrMsg(null, '当前文档下无子文档', 2000);
 }
 
 //获取当前文档信息
